@@ -12,3 +12,5 @@ https://github.com/laurocervantes/C683_HW1_CERVANTES_LAURO
 
 
 Please read the README.PDF file included on ZIP file uploaded to blackboard. This repository does not include PDF README file with the lab results.
+
+To test the app please clone this repository on your local Android Studio and Run.
