@@ -8,7 +8,6 @@ Student ID: U79899972 laurocs@bu.edu
 https://github.com/laurocervantes/C683_HW1_CERVANTES_LAURO
  
  
-README
 
 
 
