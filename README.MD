@@ -1,5 +1,5 @@
 MET BU CS 683 MOBILE APPLICATION DEVELOPMENT
-Lab 1 - Module 1
+Iteration 1 - Module 1
  
  
 Lauro Cervantes Sanchez
