@@ -8,15 +8,22 @@ import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
     private lateinit var button: Button
+    private lateinit var buttonSignUp: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         button = findViewById(R.id.button)
+        buttonSignUp = findViewById(R.id.button2)
 
         button.setOnClickListener {
             val intent = Intent(this, HelloWorldHomeFragment::class.java)
+            startActivity(intent)
+        }
+
+        buttonSignUp.setOnClickListener {
+            val intent = Intent (this, SignUpActivity::class.java)
             startActivity(intent)
         }
 

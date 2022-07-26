@@ -25,6 +25,9 @@
         <activity android:name=".HelloWorldHomeFragment"
             android:exported="true">
         </activity>
+        <activity android:name=".SignUpActivity"
+            android:exported="true">
+        </activity>
     </application>
 
 </manifest>
