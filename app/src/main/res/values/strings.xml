@@ -7,4 +7,6 @@
     <string name="lauro_cervantes">LAURO CERVANTES</string>
     <string name="start">START</string>
     <string name="contacts">Contacts</string>
+    <string name="log_in">Log In</string>
+    <string name="sign_up">SIGN UP</string>
 </resources>
