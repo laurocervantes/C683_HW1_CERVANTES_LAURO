@@ -1,5 +1,6 @@
 package com.example.c683_hw1_cervantes_lauro
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.drawable.ClipDrawable.VERTICAL
 import android.icu.lang.UCharacter.DecompositionType.VERTICAL
@@ -12,10 +13,15 @@ import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintLayout.LayoutParams.VERTICAL
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.VERTICAL
+import org.json.JSONException
+import org.json.JSONObject
+import java.io.IOException
+import java.nio.charset.Charset
 
 
 /**
@@ -36,11 +42,19 @@ class HelloWorldHomeFragment :  AppCompatActivity() {
 
         recyclerView.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
 
-        val datasetList = ArrayList<String>()
-        datasetList.add("Contact 1")
-        datasetList.add("Contact 2")
-        datasetList.add("Contact 3")
-        datasetList.add("Contact 4")
+        var datasetList = ArrayList<String>()
+
+        try {
+            val obj = JSONObject(loadJSONFromAsset())
+            val userArray = obj.getJSONArray("users")
+            for (i in 0 until userArray.length()) {
+                val userDetail = userArray.getJSONObject(i)
+                datasetList.add(userDetail.getString("name"))
+            }
+        }
+        catch (e: JSONException) {
+            e.printStackTrace()
+        }
 
         val adapterDataList = RecyclerViewAdapter(datasetList)
         recyclerView.adapter = adapterDataList
@@ -53,33 +67,22 @@ class HelloWorldHomeFragment :  AppCompatActivity() {
             Log.d("Hello World Activity", "Running onCreate")
     }
 
-    override fun onStart() {
-        super.onStart()
-
-        Log.d("Hello World Activity", "Running onStart")
+    private fun loadJSONFromAsset(): String {
+        val json: String?
+        try {
+            val inputStream = assets.open("contacts.json")
+            val size = inputStream.available()
+            val buffer = ByteArray(size)
+            val charset: Charset = Charsets.UTF_8
+            inputStream.read(buffer)
+            inputStream.close()
+            json = String(buffer, charset)
+        }
+        catch (ex: IOException) {
+            ex.printStackTrace()
+            return ""
+        }
+        return json
     }
 
-    override fun onResume() {
-        super.onResume()
-
-        Log.d("Hello World Activity", "Running onStart")
-    }
-
-    override fun onPause() {
-        super.onPause()
-
-        Log.d("Hello World Activity", "Running onPause")
-    }
-
-    override fun onStop() {
-        super.onStop()
-
-        Log.d("Hello World Activity", "Running onStop")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-
-        Log.d("Hello World Activity", "Running onDestroy")
-    }
 }
