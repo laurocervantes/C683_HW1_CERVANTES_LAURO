@@ -1,10 +1,11 @@
-package com.example.c683_hw1_cervantes_lauro
+package com.example.c683_hw1_cervantes_lauro.ui
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.c683_hw1_cervantes_lauro.R
 
 class RecyclerViewAdapter (val listOfData: ArrayList<String>): RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
     override fun onCreateViewHolder(p0: ViewGroup, position: Int): ViewHolder {
