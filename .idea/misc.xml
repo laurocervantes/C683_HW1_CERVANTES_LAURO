@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Lauro1/AndroidStudioProjects/C683_HW1_CERVANTES_LAURO/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.248" />
+        <entry key="..\:/Users/Lauro1/AndroidStudioProjects/C683_HW1_CERVANTES_LAURO/app/src/main/res/drawable/ic_launcher_background.xml" value="0.248" />
         <entry key="..\:/Users/Lauro1/AndroidStudioProjects/C683_HW1_CERVANTES_LAURO/app/src/main/res/layout/activity_hello_world_home.xml" value="0.264" />
         <entry key="..\:/Users/Lauro1/AndroidStudioProjects/C683_HW1_CERVANTES_LAURO/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/Lauro1/AndroidStudioProjects/C683_HW1_CERVANTES_LAURO/app/src/main/res/layout/activity_signup.xml" value="0.25" />

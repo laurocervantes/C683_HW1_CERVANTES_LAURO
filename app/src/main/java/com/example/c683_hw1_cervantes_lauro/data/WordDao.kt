@@ -7,15 +7,14 @@ import androidx.room.Query
 import kotlinx.coroutines.flow.Flow
 
 @Dao
-interface ChatDao {
+interface WordDao {
 
-    @Query("SELECT * FROM chat_table ORDER BY message ASC")
-    fun getAlphabetizedWords(): Flow<List<Chat>>
+    @Query("SELECT * FROM word_table ORDER BY word ASC")
+    fun getAlphabetizedWords(): Flow<List<Word>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insert(message: Chat)
+    suspend fun insert(word: Word)
 
-    @Query("DELETE FROM chat_table")
+    @Query("DELETE FROM word_table")
     suspend fun deleteAll()
-
 }
